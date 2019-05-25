@@ -1,0 +1,53 @@
+.contact-list {
+  table-layout: fixed;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: gainsboro;
+  border-collapse: collapse;
+}
+
+td {
+  font-size: 15px;
+  padding: 11px 21px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+td:first-child {
+  width: 25%;
+}
+
+thead {
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+tbody tr:hover {}
+
+tbody td {
+  border: 1px solid #ddd;
+}
+
+tbody td:first-child {
+  box-shadow: 2px 0 4px -2px rgba(0, 0, 0, .4)
+}
+
+.user-detail {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.image-detail {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 60px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 60px;
+  -moz-background-clip: padding;
+  border-radius: 60px;
+  background-clip: padding-box;
+  margin: 7px 0 0 5px;
+  background-size: cover;
+  background-position: center center;
+}
