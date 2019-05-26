@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Search = ({ contacts }) => {
+const Search = ({ value, onChange }) => {
   return (
-    <form>
+    <div>
       <input
+        value={value}
         placeholder="Search for..."
-        ref={input => this.search = input}
-        onChange={this.handleInputChange}
+        onChange={({ target: { value }}) => {
+          onChange(value);
+        }}
       />
-    </form>
+    </div>
   )
 }
 

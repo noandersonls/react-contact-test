@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './ContactList.css'
 
 
-const ContactList = ({ contacts }) => (
+const ContactList = ({ contacts, deleteUser }) => (
     <table className='contact-list'>
       <thead>
         <tr>
@@ -23,7 +23,7 @@ const ContactList = ({ contacts }) => (
                   </div>
                   <button
                     className='user-delete contact-list'
-                    onClick={() => this.deleteuser(user.id)}
+                    onClick={() => deleteUser(user.id)}
                   >
                     Eliminar
                     </button>

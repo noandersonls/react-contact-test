@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ContactList from './Components/ContactList'
 import axios from 'axios'
+import Search from './Components/Search';
 
 const API_URL = 'http://localhost:3000/api/users/'
 const API_SEARCH = '?q='
@@ -16,8 +17,10 @@ class App extends Component {
     this.getInfo()
   }
 
-  componentDidUpdate() {
-    
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.query !== prevState.query) {
+      this.getInfo()
+    }
   }
 
   getInfo = () => {
@@ -31,37 +34,19 @@ class App extends Component {
       })
   }
 
-  handleInputChange = () => {
-    this.setState({
-      query: this.search.value
-    }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          this.getInfo()
-        }
-      } else if (!this.state.query) {
-      }
-    })
-  }
-
+  handleInputChange = query => this.setState({query})
   onDeleteUser = (id) => {
     axios.delete(`${API_URL}${id}`)
-      .then(data => {
-        this.setState({results: data})
-        
+      .then(() => {
+        this.getInfo()
       })
   }
+
 
   render() {
     return (
       <div>
-        <form>
-          <input
-            placeholder="Search for..."
-            ref={input => this.search = input}
-            onChange={this.handleInputChange}
-          />
-        </form>
+        <Search onChange={value => this.handleInputChange(value)}/>
         <ContactList contacts={this.state.results} deleteUser={this.onDeleteUser} />
       </div>
     )
