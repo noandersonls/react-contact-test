@@ -8,13 +8,13 @@
 
 td {
   font-size: 15px;
-  padding: 11px 21px;
+  padding: 12px 22px;
   line-height: 1.5;
   vertical-align: top;
 }
 
 td:first-child {
-  width: 25%;
+  width: 35%;
 }
 
 thead {
@@ -22,10 +22,17 @@ thead {
   box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
 }
 
-tbody tr:hover {}
-
 tbody td {
   border: 1px solid #ddd;
+  border-left: 2px solid #ddd;
+}
+tbody td:hover .user-delete{
+  outline: none;
+  display:block;
+}
+
+body tr:nth-child(even) {
+  border-left: 3px solid #ddd;
 }
 
 tbody td:first-child {
@@ -39,8 +46,8 @@ tbody td:first-child {
 }
 
 .image-detail {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   -webkit-border-radius: 60px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 60px;
@@ -50,4 +57,21 @@ tbody td:first-child {
   margin: 7px 0 0 5px;
   background-size: cover;
   background-position: center center;
+}
+
+.user-delete {
+  display: none;
+  background-color: transparent;
+  color:#fab43d;
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  bottom: 4px;
+  font-size: 12px;
+  line-height: 30px;
+
+}
+
+.user-name {
+  padding-left: 20px;
 }

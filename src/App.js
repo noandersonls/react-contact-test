@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import ContactList from './Components/ContactList'
 import axios from 'axios'
-import Search from './Components/Search';
+import ContactList from './Components/ContactList/ContactList'
+import Header from './Components/Header/Header'
+
+import './App.css'
 
 const API_URL = 'http://localhost:3000/api/users/'
 const API_SEARCH = '?q='
@@ -34,7 +36,7 @@ class App extends Component {
       })
   }
 
-  handleInputChange = query => this.setState({query})
+  handleInputChange = query => this.setState({ query })
   onDeleteUser = (id) => {
     axios.delete(`${API_URL}${id}`)
       .then(() => {
@@ -45,8 +47,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Search onChange={value => this.handleInputChange(value)}/>
+      <div className="container">
+        <Header onChange={value => this.handleInputChange(value)} />
         <ContactList contacts={this.state.results} deleteUser={this.onDeleteUser} />
       </div>
     )

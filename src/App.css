@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+
+body {
+  background-color: #e5e5e5;
+  line-height: 1.2;
+  color: #616161;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 944px;
+  margin: auto;
+  padding: 0 16px;
+
+}  
+

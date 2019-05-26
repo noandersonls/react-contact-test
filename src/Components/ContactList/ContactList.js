@@ -7,8 +7,8 @@ const ContactList = ({ contacts, deleteUser }) => (
     <table className='contact-list'>
       <thead>
         <tr>
-          <td>Nombre</td>
-          <td>Descripción</td>
+          <td><b>Nombre</b></td>
+          <td><b>Descripción</b></td>
         </tr>
       </thead>
       <tbody>

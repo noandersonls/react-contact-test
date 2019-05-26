@@ -1,11 +1,13 @@
 import React from 'react'
+import './Search.css'
 
 const Search = ({ value, onChange }) => {
   return (
-    <div>
+    <div className="search-bar">
       <input
+        className="search-input"
         value={value}
-        placeholder="Search for..."
+        placeholder="Buscar contacto..."
         onChange={({ target: { value }}) => {
           onChange(value);
         }}

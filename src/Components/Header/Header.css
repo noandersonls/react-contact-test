@@ -1,0 +1,13 @@
+.top {
+  margin-top: 42px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+span {
+  color: gray;
+}
