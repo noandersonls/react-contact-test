@@ -2,11 +2,11 @@ import React from 'react'
 import Search from '../Search/Search'
 import './Header.css'
 
-const Header = ({onChange}) => {
+const Header = ({ onChange, showModal }) => {
   return (
     <div className="top" >
       <h2 className="title"><span>Test</span> <b>BeeTrack</b></h2>
-      <Search onChange={onChange}/>
+      <Search onChange={onChange} />
     </div >
   )
 }
