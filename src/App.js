@@ -53,14 +53,21 @@ class App extends Component {
     this.setState({ modal: false })
   }
 
+  onSubmit = (newUser) => {
+    const {photo, name, description} = newUser
+    axios.post(`${API_URL}`, {photo, name, description} ).then(res=>{
+      const newContact = res.data
+      this.setState(prevState => ({
+        results: [newContact, ...prevState.results]
+      }))
+    })
+  }
 
   render() {
     return (
       <div className="container">
         <Header onChange={value => this.handleInputChange(value)} />
-        <Modal show={this.state.modal} handleClose={this.hideModal}>
-          {<Header/>}
-        </Modal>
+        <Modal show={this.state.modal} handleClose={this.hideModal} submitUser={this.onSubmit}/>
         <button type="button" onClick={this.showModal}>
           Nuevo Contacto
         </button>

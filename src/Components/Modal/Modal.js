@@ -3,15 +3,14 @@ import ContactForm from '../ContactForm/ContactForm'
 import './Modal.css'
 
 
-const Modal = ({ handleClose, show, children}) => {
+const Modal = ({ handleClose, show, submitUser}) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
     <div className={showHideClassName}>
-      <section className="modal-main">
-        {children}
-        <button onClick={handleClose}>Close</button>
-      </section>
+      <div className="modal-main">          
+          {<ContactForm submitUser={submitUser} handleClose={handleClose}/>}
+      </div>
     </div>
   );
 };
