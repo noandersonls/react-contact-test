@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button/Button'
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -60,15 +61,11 @@ class ContactForm extends React.Component {
 
               </textarea>
             </label>
-
-            <button
-              type="button"
-              onClick={() => {
-                this.submitUser();
-              }}
+            <Button
+              onClick={this.submitUser}
             >
               Guardar
-            </button>
+            </Button>
           </form>
         </div>
       </div>

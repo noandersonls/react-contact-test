@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: #fab43d;
+  color: #fff;
+  font-size: 14px;
+  height: 35px;
+}
+
+.button:focus {
+  outline: none;
+}

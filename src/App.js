@@ -4,6 +4,8 @@ import ContactList from './Components/ContactList/ContactList'
 import Header from './Components/Header/Header'
 import Modal from './Components/Modal/Modal'
 import ContactForm from './Components/ContactForm/ContactForm'
+
+
 import './App.css'
 
 const API_URL = 'http://localhost:3000/api/users/'
@@ -63,16 +65,12 @@ class App extends Component {
     const { results, modal } = this.state
     return (
       <div className="container">
-        <Header onChange={value => this.handleInputChange(value)} />
+        <Header onChange={value => this.handleInputChange(value)} onClick={this.toggleModal} />
         {modal && (
           <Modal show={modal} handleClose={this.toggleModal} submitUser={this.onSubmit}>
             <ContactForm submitUser={this.onSubmit} />
           </Modal>
-        )
-        }
-        <button type="button" onClick={this.toggleModal}>
-          Nuevo Contacto
-        </button>
+        )}
         <ContactList contacts={results} deleteUser={this.onDeleteUser} />
       </div>
     )
