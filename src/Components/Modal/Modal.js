@@ -8,7 +8,7 @@ const Modal = ({ handleClose, show, submitUser}) => {
 
   return (
     <div className={showHideClassName}>
-      <div className="modal-main">          
+      <div className="modal-container">          
           {<ContactForm submitUser={submitUser} handleClose={handleClose}/>}
       </div>
     </div>

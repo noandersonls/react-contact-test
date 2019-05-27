@@ -22,6 +22,7 @@ tbody td {
 
 tbody td:hover .user-delete {
   opacity: 1;
+  outline: none;
 }
 
 tbody tr:nth-child(even) {
