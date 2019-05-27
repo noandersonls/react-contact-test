@@ -65,7 +65,6 @@ class ContactForm extends React.Component {
               type="button"
               onClick={() => {
                 this.submitUser();
-                this.props.handleClose();  
               }}
             >
               Guardar

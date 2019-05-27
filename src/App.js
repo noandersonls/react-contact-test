@@ -3,6 +3,7 @@ import axios from 'axios'
 import ContactList from './Components/ContactList/ContactList'
 import Header from './Components/Header/Header'
 import Modal from './Components/Modal/Modal'
+import ContactForm from './Components/ContactForm/ContactForm'
 import './App.css'
 
 const API_URL = 'http://localhost:3000/api/users/'
@@ -45,33 +46,34 @@ class App extends Component {
       })
   }
 
-  showModal = () => {
-    this.setState({ modal: true })
-  }
-
-  hideModal = () => {
-    this.setState({ modal: false })
+  toggleModal = () => {
+    this.setState((prevState) => ({
+      modal: !prevState.modal
+    }))
   }
 
   onSubmit = (newUser) => {
-    const {photo, name, description} = newUser
-    axios.post(`${API_URL}`, {photo, name, description} ).then(res=>{
-      const newContact = res.data
-      this.setState(prevState => ({
-        results: [newContact, ...prevState.results]
-      }))
+    axios.post(`${API_URL}`, newUser).then(() => {
+      this.getInfo();
+      this.toggleModal();
     })
   }
 
   render() {
+    const { results, modal } = this.state
     return (
       <div className="container">
         <Header onChange={value => this.handleInputChange(value)} />
-        <Modal show={this.state.modal} handleClose={this.hideModal} submitUser={this.onSubmit}/>
-        <button type="button" onClick={this.showModal}>
+        {modal && (
+          <Modal show={modal} handleClose={this.toggleModal} submitUser={this.onSubmit}>
+            <ContactForm submitUser={this.onSubmit} />
+          </Modal>
+        )
+        }
+        <button type="button" onClick={this.toggleModal}>
           Nuevo Contacto
         </button>
-        <ContactList contacts={this.state.results} deleteUser={this.onDeleteUser} />
+        <ContactList contacts={results} deleteUser={this.onDeleteUser} />
       </div>
     )
   }
