@@ -1,14 +1,13 @@
-.top {
-  margin-top: 20px;
-  margin-bottom: 24px;
-}
-
-.title {
+.header-title {
   margin-bottom: 20px;
   font-weight: 400;
 }
 
-span {
+h2 span {
   color: gray;
 }
 
+.header-btn {
+  position: absolute;
+  top: 20px;
+}

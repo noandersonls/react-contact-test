@@ -1,15 +1,17 @@
 import React from 'react'
+
+import './Header.css'
+
 import Search from '../Search/Search'
 import Button from '../Button/Button';
-import './Header.css'
 
 
 const Header = ({ onChange, showModal, onClick}) => {
   return (
-    <div className="top" >
-      <h2 className="title"><span>Test</span> <b>Beetrack</b></h2>
+    <div className="header-top" >
+      <h2 className="header-title"><span>Test</span> <b>Beetrack</b></h2>
       <Search onChange={onChange}/>
-      <Button className='btn' onClick={onClick}>Nuevo Contacto</Button>
+      <Button className='header-btn' onClick={onClick}>Nuevo Contacto</Button>
     </div >
   )
 }
