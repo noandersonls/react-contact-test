@@ -2,15 +2,19 @@ import React from 'react'
 import './Modal.css'
 
 
-const Modal = ({ handleClose, show, submitUser, children}) => {
+const Modal = ({ handleClose, show, submitUser, children }) => {
   return (
-    <div className='modal'>
-      <div className="modal-container">          
-          {children}
+    <div>
+      <div className="backdrop"
+        onClick={handleClose}
+      >
+      </div>
+      <div className="modal-container modal">
+        {children}
       </div>
     </div>
-  );
-};
-
-export default Modal
-
+    );
+  };
+  
+  export default Modal
+  

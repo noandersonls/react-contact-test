@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../Button/Button'
+import './ContactForm.css'
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class ContactForm extends React.Component {
   render() {
     const { photo, name, description } = this.state
     return (
-      <div>
+      <div className='form-container'>
         <div className='form-header'>
           <h2>Agregar nuevo contacto</h2>
         </div>
@@ -49,6 +50,8 @@ class ContactForm extends React.Component {
                 type="text"
                 name="name"
                 value={name}
+                placeholder='Ejemplo: Michael Scott'
+                required
               />
             </label>
             <label className='form-label'>
@@ -58,11 +61,12 @@ class ContactForm extends React.Component {
                 name="description"
                 value={description}
               >
-
               </textarea>
             </label>
             <Button
+              type={"submit"}
               onClick={this.submitUser}
+              className='form-btn'
             >
               Guardar
             </Button>

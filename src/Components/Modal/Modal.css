@@ -1,5 +1,16 @@
-.modal {
+.backdrop {
   z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.3);
+}
+
+
+.modal {
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,17 +28,8 @@
   height: auto;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -20%);
   border: 1px hidden #ddd;
   box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
 }
 
-.modal-head {
-  padding: 24px 19px;
-  border-bottom: 1px solid #ddd;
-  background-color: #fff;
-}
-
-.modal-head h2 {
-  font-size: 20px;
-}

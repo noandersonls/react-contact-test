@@ -1,0 +1,29 @@
+.form-header {
+  padding: 24px 18px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.form-header h2{
+  padding-top: 4px;
+}
+
+.form-body {
+  padding: 30px 40px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: rgb(111, 112, 112);
+}
+
+input, textarea {
+  display: block;
+  width:100%;
+  margin-top: 6px;
+  line-height: 1.5;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  resize: none;
+  outline: none;
+}
