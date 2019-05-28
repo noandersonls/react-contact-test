@@ -75,13 +75,15 @@ class App extends Component {
 
   nextPage = () => {
     if (this.state.page + 1 < this.state.results.length) {
-      console.log('Hello')
       this.setState({ page: this.state.page + 1 })
     }
   }
 
   render() {
-    const { results, modal} = this.state
+    const { results, modal, page} = this.state
+    const disabledprev = page > 1 ? false: true
+    const disablednext = page + 1 < results.length ? false: true
+
     return (
       <div className="container">
         <Header onChange={value => this.handleInputChange(value)} onClick={this.toggleModal} />
@@ -91,7 +93,7 @@ class App extends Component {
           </Modal>
         )}
         <ContactList contacts={results} deleteUser={this.onDeleteUser} />
-        <Pagination handlePrev={this.previousPage} handleNext={this.nextPage}/>
+        <Pagination handlePrev={this.previousPage} handleNext={this.nextPage} disabledbtnprev={disabledprev} disabledbtnnext={disablednext}/>
       </div>
     )
   }
