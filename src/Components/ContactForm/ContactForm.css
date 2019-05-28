@@ -42,3 +42,7 @@ input, textarea {
   text-align: center;
   margin-left: 140px;
 }
+
+.required-element{
+  color: #ee5e04;
+}

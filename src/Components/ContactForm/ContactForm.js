@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
         <div className='form-body'>
           <form>
             <label className='form-label'>
-              URL imagen de perfil<span>*</span>
+              URL imagen de perfil<span className="required-element">*</span>
             </label>
             <input
               onChange={this.handleInputChange}
@@ -45,7 +45,7 @@ class ContactForm extends React.Component {
               required
             />
             <label className='form-label'>
-              Nombre<span>*</span>
+              Nombre<span className="required-element">*</span>
             </label>
             <input
               onChange={this.handleInputChange}
@@ -55,7 +55,7 @@ class ContactForm extends React.Component {
               required
             />
             <label className='form-label'>
-              Descripción<span>*</span>
+              Descripción<span className="required-element">*</span>
             </label>
             <textarea
               onChange={this.handleInputChange}

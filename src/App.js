@@ -11,7 +11,6 @@ import './App.css'
 
 const API_URL = 'http://localhost:3000/api/users/'
 const API_SEARCH = '?q='
-const API_PAGINATION = `?_page=1&_limit=5`
 
 
 class App extends Component {
@@ -34,7 +33,8 @@ class App extends Component {
   }
 
   getInfo = () => {
-    const QUERY = this.state.query.length > 0 ? `${API_URL}${API_SEARCH}${this.state.query}` : `${API_URL}?_page=${this.state.page}&_limit=${this.state.limit}`
+    const {query, page, limit } = this.state
+    const QUERY = query.length > 0 ? `${API_URL}${API_SEARCH}${query}` : `${API_URL}?_page=${page}&_limit=${limit}`
     axios
       .get(QUERY)
       .then(({ data }) => {
@@ -70,17 +70,18 @@ class App extends Component {
   previousPage = () => {
     if (this.state.page !== 1) {
       this.setState({ page: this.state.page - 1 })
-    }
+    } 
   }
 
   nextPage = () => {
     if (this.state.page + 1 < this.state.results.length) {
+      console.log('Hello')
       this.setState({ page: this.state.page + 1 })
     }
   }
 
   render() {
-    const { results, modal } = this.state
+    const { results, modal} = this.state
     return (
       <div className="container">
         <Header onChange={value => this.handleInputChange(value)} onClick={this.toggleModal} />
@@ -90,8 +91,7 @@ class App extends Component {
           </Modal>
         )}
         <ContactList contacts={results} deleteUser={this.onDeleteUser} />
-        <button onClick={this.previousPage}>Anterior</button>
-        <button onClick={this.nextPage}>Siguiente</button>
+        <Pagination handlePrev={this.previousPage} handleNext={this.nextPage}/>
       </div>
     )
   }

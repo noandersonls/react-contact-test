@@ -10,7 +10,6 @@
   padding: 8px;
   padding-left: 40px;
   height: 35px;
-  width: 100%;
 }
 
 .icon-search {
@@ -18,7 +17,11 @@
   fill: #FEB33C;
   width: 18px;
   height: auto;
-  top: 9px;
-  left: 9px;
-  
+  margin-top: 14px;
+  margin-left: 14px;
+}
+
+.header-btn{
+  position: relative;
+  margin-top: 6px;
 }
