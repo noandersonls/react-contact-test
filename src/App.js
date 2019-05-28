@@ -19,7 +19,7 @@ class App extends Component {
     results: [],
     modal: false,
     page: 1,
-    limit: 5,
+    limit: 6,
   }
 
   componentDidMount() {

@@ -20,7 +20,7 @@ class ContactForm extends React.Component {
     });
   };
 
-  submitUser = (event) => {
+  submitUser = event => {
     event.preventDefault();
     let newUser = this.state;
     this.props.submitUser(newUser);
@@ -34,7 +34,7 @@ class ContactForm extends React.Component {
           <h2>Agregar nuevo contacto</h2>
         </div>
         <div className="form-body">
-          <form onSubmit={this.submitUser} >
+          <form onSubmit={this.submitUser}>
             <label className="form-label">
               URL imagen de perfil<span className="required-element">*</span>
             </label>
