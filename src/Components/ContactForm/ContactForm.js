@@ -20,8 +20,7 @@ class ContactForm extends React.Component {
     });
   };
 
-  submitUser = event => {
-    event.preventDefault();
+  submitUser = () => {
     let newUser = this.state;
     this.props.submitUser(newUser);
   };

@@ -19,7 +19,7 @@ class App extends Component {
     results: [],
     modal: false,
     page: 1,
-    limit: 6,
+    limit: 5,
   }
 
   componentDidMount() {
@@ -45,6 +45,7 @@ class App extends Component {
   }
 
   handleInputChange = query => this.setState({ query })
+
   onDeleteUser = (id) => {
     axios.delete(`${API_URL}${id}`)
       .then(() => {
@@ -62,7 +63,6 @@ class App extends Component {
     const headers = { "Content-Type": "application/json" }
     axios.post(`${API_URL}`, newUser, { headers }).then(() => {
       this.getInfo();
-      this.toggleModal();
     })
   }
 

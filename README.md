@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## Available Scripts
+### Descripción
 
-In the project directory, you can run:
+Proyecto prueba de lista de contacto, consta de una vista con usuarios, un buscador, un modal que nos permite agregar nuevos usuarios y por último un paginador. 
 
-### `npm start`
+- Fue construido solamente con React.
+- Cada componenten cuenta con CSS individual.
+- Se utilizó Axios para los HTTP resquest.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+### Componentes
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Los componentes son funcionales, a excepción del ContactForm que maneja el estado de la data para agregar el nuevo usuario.
 
-### `npm run build`
+Componente | Descripción
+--- | ---
+**Button.js** | Botón estilizado reusable.
+**ContactForm.js** | Se encarga de renderizar un formulario y cargar la data para luego ser enviada a través de Axios.
+**ContactList.js** | Recibe los contactos y a través del método map crea los mismos en una tabla.
+**Header.js** | Crea el Logo y llama a Search y Button para mostrar la barra de busqueda y el botón añadir contacto.
+**Modal.js** | Recibe un children para mostrar dentro del Modal.
+**Pagination.js** | Consta de dos botones para la paginación de la lista.
+**Search.js** | Permite introducir un input que recibe un prop onChange para que a través del componente padre App se establezca la query para la busqueda en el estado.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Métodos en App.js 
 
-### `npm run eject`
+Los siguientes métodos se encargan de manejar la data a través de la aplicación, agregar el contacto, realizar la busqueda, establecer el estado, eliminar al contacto, abrir el modal y manejar el paginado.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Método | Descripción
+--- | ---
+**componentDidMount** | Llama a  **getInfo**  obtiene el listado de personas desde la API, y los setea en el estado del componente.
+**getInfo** | Se encarga de hacer el request a la API para obtener los users, verificando si existe una query para realizar una busqueda.
+**ComponentDidUpdate** | Se ejecuta después de que la actualización ocurre para comparar si la query de la busqueda ha cambiado con respecto al prevState y así llamar a getInfo()
+**onDeleteUser** | Recibe un id de usuario para eliminarlo a través la llamada Delete de Axios.
+**toggleModal** | Alterna entre True o False el Modal en el state para mostrar/cerrarlo.
+**onSubmit** | Recibe un nuevo usuario y lo crea a través de un POST de Axios.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
