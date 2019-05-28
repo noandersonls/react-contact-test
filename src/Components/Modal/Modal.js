@@ -9,7 +9,7 @@ const Modal = ({ handleClose, show, submitUser, children }) => {
         onClick={handleClose}
       >
       </div>
-      <div className="modal-container modal">
+      <div className="modal">
         {children}
       </div>
     </div>

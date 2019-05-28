@@ -1,18 +1,14 @@
-/* .form-container {
-  position: fixed;
-  background: white;
-  width: 100%;
-  height: auto;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-}
-
 .form-header {
   padding: 24px 18px;
   border-bottom: 1px solid #ddd;
   background-color: #fff;
 }
+
+
+.form-body{
+  background-color: rgb(238, 238, 238);
+}
+
 .form-header h2{
   padding-top: 4px;
 }
@@ -26,6 +22,7 @@ label {
   display: block;
   font-weight: 600;
   color: rgb(111, 112, 112);
+  margin-top:10px;
 }
 
 input, textarea {
@@ -39,6 +36,9 @@ input, textarea {
   outline: none;
 }
 
-label span {
-  color: red;
-} */
+.form-btn{
+  width: 30%;
+  margin-top: 10px;
+  text-align: center;
+  margin-left: 140px;
+}

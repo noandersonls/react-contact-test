@@ -28,7 +28,7 @@ class ContactForm extends React.Component {
   render() {
     const { photo, name, description } = this.state
     return (
-      <div className='form-container'>
+      <div>
         <div className='form-header'>
           <h2>Agregar nuevo contacto</h2>
         </div>
@@ -52,7 +52,6 @@ class ContactForm extends React.Component {
               type="text"
               name="name"
               value={name}
-              placeholder='Ejemplo: Michael Scott'
               required
             />
             <label className='form-label'>
