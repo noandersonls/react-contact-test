@@ -90,8 +90,8 @@ class App extends Component {
           </Modal>
         )}
         <ContactList contacts={results} deleteUser={this.onDeleteUser} />
-        <button onClick={this.previousPage}>Previous page</button>
-        <button onClick={this.nextPage}>Next page</button>
+        <button onClick={this.previousPage}>Anterior</button>
+        <button onClick={this.nextPage}>Siguiente</button>
       </div>
     )
   }
