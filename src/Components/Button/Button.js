@@ -1,10 +1,10 @@
 import React from 'react'
 import './Button.css'
 
-const Button = ({ onClick, children, type }) => {
+const Button = ({ onClick, children, className }) => {
   return (
     <div>
-      <button type={type} className='button' onClick={onClick}>
+      <button className={`button ${className}`} onClick={onClick}>
         {children}
       </button>
     </div>
@@ -12,3 +12,4 @@ const Button = ({ onClick, children, type }) => {
 }
 
 export default Button
+

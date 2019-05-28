@@ -36,35 +36,36 @@ class ContactForm extends React.Component {
           <form>
             <label className='form-label'>
               URL imagen de perfil<span>*</span>
-              <input
-                onChange={this.handleInputChange}
-                type="text"
-                name="photo"
-                value={photo}
-              />
             </label>
+            <input
+              onChange={this.handleInputChange}
+              type="text"
+              name="photo"
+              value={photo}
+              required
+            />
             <label className='form-label'>
               Nombre<span>*</span>
-              <input
-                onChange={this.handleInputChange}
-                type="text"
-                name="name"
-                value={name}
-                placeholder='Ejemplo: Michael Scott'
-                required
-              />
             </label>
+            <input
+              onChange={this.handleInputChange}
+              type="text"
+              name="name"
+              value={name}
+              placeholder='Ejemplo: Michael Scott'
+              required
+            />
             <label className='form-label'>
               Descripción<span>*</span>
-              <textarea
-                onChange={this.handleInputChange}
-                name="description"
-                value={description}
-              >
-              </textarea>
             </label>
+            <textarea
+              onChange={this.handleInputChange}
+              name="description"
+              value={description}
+              required
+            >
+            </textarea>
             <Button
-              type={"submit"}
               onClick={this.submitUser}
               className='form-btn'
             >

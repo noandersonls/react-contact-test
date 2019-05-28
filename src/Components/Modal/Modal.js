@@ -5,7 +5,7 @@ import './Modal.css'
 const Modal = ({ handleClose, show, submitUser, children }) => {
   return (
     <div>
-      <div className="backdrop"
+      <div className="outside-click"
         onClick={handleClose}
       >
       </div>

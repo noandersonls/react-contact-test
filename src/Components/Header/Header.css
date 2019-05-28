@@ -7,7 +7,16 @@ h2 span {
   color: gray;
 }
 
-.header-btn {
-  position: absolute;
-  top: 20px;
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.icon-add {
+  fill: white;
+  width: 18px;
+  height: auto;
+  margin-left: 8px;
+  margin-right: 4px;
 }
