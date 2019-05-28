@@ -76,7 +76,7 @@ class App extends Component {
   nextPage = () => {
     const { results, limit } = this.state
     const lastPage = results.length !== limit
-    if (!lastPage) {
+    if (!lastPage){
       this.setState({ page: this.state.page + 1 })
     }
   }
