@@ -20,6 +20,7 @@ class App extends Component {
     results: [],
     modal: false,
     page: 1,
+    limit: 4,
   }
 
   componentDidMount() {
@@ -27,18 +28,18 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.query !== prevState.query) {
-      this.getInfo()
+    if (this.state.query !== prevState.query || this.state.page !== prevState.page) {
+      this.getInfo();
     }
   }
 
   getInfo = () => {
-    const QUERY = this.state.query.length > 0 ? `${API_URL}${API_SEARCH}${this.state.query}` : `${API_URL}?_page=${this.state.page}&_limit=5`
+    const QUERY = this.state.query.length > 0 ? `${API_URL}${API_SEARCH}${this.state.query}` : `${API_URL}?_page=${this.state.page}&_limit=${this.state.limit}`
     axios
       .get(QUERY)
       .then(({ data }) => {
         this.setState({
-          results: data
+          results: data,
         })
       })
   }
@@ -65,13 +66,21 @@ class App extends Component {
     })
   }
 
-  goPage = () => {
-    console.log('go page')
+
+  previousPage = () => {
+    if (this.state.page !== 1) {
+      this.setState({ page: this.state.page - 1 })
+    }
   }
 
+  nextPage = () => {
+    if (this.state.page + 1 < this.state.results.length) {
+      this.setState({ page: this.state.page + 1 })
+    }
+  }
 
   render() {
-    const { results, modal, page } = this.state
+    const { results, modal } = this.state
     return (
       <div className="container">
         <Header onChange={value => this.handleInputChange(value)} onClick={this.toggleModal} />
@@ -81,7 +90,8 @@ class App extends Component {
           </Modal>
         )}
         <ContactList contacts={results} deleteUser={this.onDeleteUser} />
-        <Pagination currentPage={page} onClick={this.goPage}/>
+        <button onClick={this.previousPage}>Previous page</button>
+        <button onClick={this.nextPage}>Next page</button>
       </div>
     )
   }
