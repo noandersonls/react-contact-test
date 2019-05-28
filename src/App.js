@@ -19,7 +19,7 @@ class App extends Component {
     results: [],
     modal: false,
     page: 1,
-    limit: 4,
+    limit: 6,
   }
 
   componentDidMount() {
@@ -74,7 +74,7 @@ class App extends Component {
   }
 
   nextPage = () => {
-    if (this.state.page + 1 < this.state.results.length) {
+    if (this.state.results.length !== this.state.limit || this.state.page * this.state.limit) {
       this.setState({ page: this.state.page + 1 })
     }
   }
