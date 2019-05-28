@@ -4,12 +4,11 @@
   background-color: #fff;
 }
 
-
-.form-body{
+.form-body {
   background-color: rgb(238, 238, 238);
 }
 
-.form-header h2{
+.form-header h2 {
   padding-top: 4px;
 }
 
@@ -22,12 +21,13 @@ label {
   display: block;
   font-weight: 600;
   color: rgb(111, 112, 112);
-  margin-top:10px;
+  margin-top: 10px;
 }
 
-input, textarea {
+input,
+textarea {
   display: block;
-  width:100%;
+  width: 100%;
   margin-top: 6px;
   line-height: 1.5;
   border: 1px solid #ddd;
@@ -36,13 +36,13 @@ input, textarea {
   outline: none;
 }
 
-.form-btn{
+.form-btn {
   width: 30%;
   margin-top: 10px;
   text-align: center;
   margin-left: 140px;
 }
 
-.required-element{
+.required-element {
   color: #ee5e04;
 }

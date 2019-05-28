@@ -1,12 +1,11 @@
-import React from 'react'
-import { ReactComponent as IconSearch } from '../../Assets/iconsearch.svg'
-import './Search.css'
+import React from "react";
+import { ReactComponent as IconSearch } from "../../Assets/iconsearch.svg";
+import "./Search.css";
 
 const Search = ({ value, onChange }) => {
   return (
     <div className="search-bar">
-      <IconSearch className="icon-search">
-      </IconSearch>
+      <IconSearch className="icon-search" />
       <input
         className="search-input"
         value={value}
@@ -16,7 +15,7 @@ const Search = ({ value, onChange }) => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

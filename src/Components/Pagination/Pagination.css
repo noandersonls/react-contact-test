@@ -1,5 +1,5 @@
-button:focus{
-  outline:none;
+button:focus {
+  outline: none;
 }
 
 .pagination {
@@ -23,11 +23,9 @@ button:disabled {
 }
 
 .icon-page {
-  fill: #FEB33C;
+  fill: #feb33c;
   width: 18px;
   height: auto;
   margin-left: 8px;
   margin-right: 4px;
 }
-
-

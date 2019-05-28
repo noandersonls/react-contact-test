@@ -19,7 +19,7 @@ class App extends Component {
     results: [],
     modal: false,
     page: 1,
-    limit: 6,
+    limit: 5,
   }
 
   componentDidMount() {
@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   getInfo = () => {
-    const {query, page, limit } = this.state
+    const { query, page, limit } = this.state
     const QUERY = query.length > 0 ? `${API_URL}${API_SEARCH}${query}` : `${API_URL}?_page=${page}&_limit=${limit}`
     axios
       .get(QUERY)
@@ -70,30 +70,46 @@ class App extends Component {
   previousPage = () => {
     if (this.state.page !== 1) {
       this.setState({ page: this.state.page - 1 })
-    } 
+    }
   }
 
   nextPage = () => {
-    if (this.state.results.length !== this.state.limit || this.state.page * this.state.limit) {
+    const { results, limit } = this.state
+    const lastPage = results.length !== limit
+    if (!lastPage) {
       this.setState({ page: this.state.page + 1 })
     }
   }
 
   render() {
-    const { results, modal, page} = this.state
-    const disabledprev = page > 1 ? false: true
-    const disablednext = page + 1 < results.length ? false: true
+    const { results, modal, page, limit } = this.state
+    const disabledprev = page > 1 ? false : true
+    const disablednext = results.length  !== limit ? true : false
 
     return (
       <div className="container">
-        <Header onChange={value => this.handleInputChange(value)} onClick={this.toggleModal} />
+        <Header
+          onChange={value => this.handleInputChange(value)}
+          onClick={this.toggleModal}
+        />
         {modal && (
-          <Modal show={modal} handleClose={this.toggleModal} submitUser={this.onSubmit}>
+          <Modal
+            show={modal} 
+            handleClose={this.toggleModal} 
+            submitUser={this.onSubmit}>
             <ContactForm submitUser={this.onSubmit} />
           </Modal>
         )}
-        <ContactList contacts={results} deleteUser={this.onDeleteUser} />
-        <Pagination handlePrev={this.previousPage} handleNext={this.nextPage} disabledbtnprev={disabledprev} disabledbtnnext={disablednext}/>
+        <ContactList
+          contacts={results}
+          deleteUser={this.onDeleteUser}
+        />
+        <Pagination
+          handlePrev={this.previousPage}
+          handleNext={this.nextPage}
+          disabledbtnprev={disabledprev}
+          disabledbtnnext={disablednext}
+        />
       </div>
     )
   }

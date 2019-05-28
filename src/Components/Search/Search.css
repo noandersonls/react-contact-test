@@ -14,14 +14,14 @@
 
 .icon-search {
   position: absolute;
-  fill: #FEB33C;
+  fill: #feb33c;
   width: 18px;
   height: auto;
   margin-top: 14px;
   margin-left: 14px;
 }
 
-.header-btn{
+.header-btn {
   position: relative;
   margin-top: 6px;
 }
