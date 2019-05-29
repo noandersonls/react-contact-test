@@ -1,9 +1,13 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+// Import custom components
 import Search from "../Search/Search";
 import Button from "../Button/Button";
 
+// Import Styles
 import "./Header.css";
+
+// Import Icons
 import { ReactComponent as AddUser } from "../../assets/iconadd.svg";
 
 const Header = ({ onSearch, onToggleModal }) => {
@@ -25,9 +29,10 @@ const Header = ({ onSearch, onToggleModal }) => {
   );
 };
 
-Header.propTypes ={
+// PropTypes for TypeChecking
+Header.propTypes = {
   onSearch: PropTypes.func.isRequired,
   onToggleModal: PropTypes.func.isRequired
-}
+};
 
 export default Header;

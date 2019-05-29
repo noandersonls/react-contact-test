@@ -1,7 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+
+// Import styles
 import "./Modal.css";
 
+// Simple modal effect with onClose's props through onClick in div for closing it
 const Modal = ({ onClose, children }) => {
   return (
     <div>
@@ -11,11 +14,10 @@ const Modal = ({ onClose, children }) => {
   );
 };
 
+// PropType for typechecking
 Modal.propTypes = {
   onClose: PropTypes.func,
-  children: PropTypes.element.isRequired,
-}
-
-
+  children: PropTypes.element.isRequired
+};
 
 export default Modal;

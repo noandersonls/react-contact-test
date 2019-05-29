@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+// Import Custom Component
 import Button from "../Button/Button";
+
+// Import Styles
 import "./ContactForm.css";
 
 class ContactForm extends React.Component {
@@ -14,6 +18,7 @@ class ContactForm extends React.Component {
     };
   }
 
+  // State setting with the data when Form Inputs calls it
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -21,6 +26,7 @@ class ContactForm extends React.Component {
     });
   };
 
+  // Send the newUser data through onSubmit's props and prevent the default Form beheaviour
   submitUser = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
@@ -74,6 +80,7 @@ class ContactForm extends React.Component {
   }
 }
 
+// PropTypes for typechecking
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };

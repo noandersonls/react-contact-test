@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+// Import styles
 import "./Button.css";
 
 const Button = ({ onClick, children, className, type }) => {
@@ -10,12 +11,12 @@ const Button = ({ onClick, children, className, type }) => {
   );
 };
 
+// PropTypes for typechecking
 Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
   clasName: PropTypes.string,
-  type: PropTypes.string,
-}
-
+  type: PropTypes.string
+};
 
 export default Button;

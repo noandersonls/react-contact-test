@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+// Import Styles
 import "./ContactList.css";
 
+// Custom Component for mapping over data
 const ContactList = ({ contacts, onDelete }) => (
   <table className="contact-list">
     <thead>
@@ -44,6 +46,7 @@ const ContactList = ({ contacts, onDelete }) => (
   </table>
 );
 
+// PropTypes for typechecking
 ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
   onDelete: PropTypes.func.isRequired

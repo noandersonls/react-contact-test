@@ -20,10 +20,12 @@ class App extends Component {
     limit: 5
   };
 
+  // Executed before rendering the component and load the starter state data when calls getInfo()
   componentDidMount() {
     this.getInfo();
   }
 
+  // Compares the state query and page key immediately after updating occurs, and calls getInfo
   componentDidUpdate(prevProps, prevState) {
     if (
       this.state.query !== prevState.query ||
@@ -33,6 +35,7 @@ class App extends Component {
     }
   }
 
+  // Makes the GET request w/ Axios with the query, if theres no one (empty query) then proceed to get the users and to set state
   getInfo = () => {
     const { query, page, limit } = this.state;
     const QUERY =
@@ -46,17 +49,22 @@ class App extends Component {
     });
   };
 
+  // Deletes the user by id
   onDeleteUser = id => {
     axios.delete(`${API_URL}${id}`).then(() => {
       this.getInfo();
     });
   };
 
+  // Toggle Modal button and all(?)
   handleToggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
   };
+
+  /* is passed to ContactForm through props. It makes the POST request with Axios to add newUser and then */
+  /*  calls getInfo for state management and close Modal */
 
   onSubmit = newUser => {
     const headers = { "Content-Type": "application/json" };
