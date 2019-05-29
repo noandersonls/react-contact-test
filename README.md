@@ -56,4 +56,4 @@ Las siguientes son ideas futuras para entender mejor patrones de organización e
 - React-Form
 - Testing con Jest - Enzyme
 - Bundling con Webpack
-
+- Implementación de React Hooks
