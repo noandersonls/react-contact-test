@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import "./ContactForm.css";
 
@@ -20,9 +21,9 @@ class ContactForm extends React.Component {
     });
   };
 
-  submitUser = () => {
-    let newUser = this.state;
-    this.props.submitUser(newUser);
+  submitUser = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
   };
 
   render() {
@@ -72,5 +73,9 @@ class ContactForm extends React.Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default ContactForm;

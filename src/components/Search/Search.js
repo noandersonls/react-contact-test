@@ -1,5 +1,6 @@
 import React from "react";
-import { ReactComponent as IconSearch } from "../../Assets/iconsearch.svg";
+import PropTypes from "prop-types";
+import { ReactComponent as IconSearch } from "../../assets/iconsearch.svg";
 import "./Search.css";
 
 const Search = ({ value, onChange }) => {
@@ -17,5 +18,10 @@ const Search = ({ value, onChange }) => {
     </div>
   );
 };
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string
+}
 
 export default Search;

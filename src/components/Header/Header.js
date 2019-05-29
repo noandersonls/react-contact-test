@@ -1,10 +1,12 @@
 import React from "react";
-import "./Header.css";
-import { ReactComponent as AddUser } from "../../Assets/iconadd.svg";
+import PropTypes from 'prop-types'
 import Search from "../Search/Search";
 import Button from "../Button/Button";
 
-const Header = ({ onChange, onClick }) => {
+import "./Header.css";
+import { ReactComponent as AddUser } from "../../assets/iconadd.svg";
+
+const Header = ({ onSearch, onToggleModal }) => {
   return (
     <div className="header-top">
       <h2 className="header-title">
@@ -13,8 +15,8 @@ const Header = ({ onChange, onClick }) => {
         </a>
       </h2>
       <div className="flex-header">
-        <Search onChange={onChange} />
-        <Button className="header-btn" onClick={onClick}>
+        <Search onChange={onSearch} />
+        <Button className="header-btn" onClick={onToggleModal}>
           <AddUser className="icon-add" />
           Nuevo Contacto
         </Button>
@@ -22,5 +24,10 @@ const Header = ({ onChange, onClick }) => {
     </div>
   );
 };
+
+Header.propTypes ={
+  onSearch: PropTypes.func.isRequired,
+  onToggleModal: PropTypes.func.isRequired
+}
 
 export default Header;
