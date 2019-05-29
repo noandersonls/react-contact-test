@@ -43,3 +43,17 @@ Método | Descripción
 
 
 ---
+
+### Cambios futuros
+
+Las siguientes son ideas futuras para entender mejor patrones de organización en React, formas de estilización, y más.
+
+- Trabajar con Styled-Components / Mejorar los módulos de CSS para que los componentes sean reutilizables al 100%
+- Implementar Redux para el manejo de estado de la data de la app
+- Utilizar FlexBox para hacer la vista principal y organización de los contactos
+- Añadir alguna funcionalidad extra para implementar React Router
+- Probar Reactstrap 
+- React-Form
+- Testing con Jest - Enzyme
+- Bundling con Webpack
+
